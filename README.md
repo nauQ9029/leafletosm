@@ -1,5 +1,32 @@
 # Getting Started with Create React App
 
+## Geocoding Comparison (Vietnam-focused)
+
+This app compares geocoding accuracy by sending the same query to multiple providers and placing one marker per provider on the map:
+
+- Geoapify Geocoding + Autocomplete (free tier, API key)
+- Goong Geocoding (Vietnam-focused, freemium)
+- OpenCage Geocoding (free tier, API key)
+- LocationIQ Geocoding (free tier, API key)
+- Self-host Nominatim or Photon (base URL required)
+
+### How to use
+
+1. Run the app with `npm start`.
+2. Enter an address query (for example, a VN-style address with hẻm/kiệt).
+3. Provide API keys for Geoapify, Goong, OpenCage, and/or LocationIQ.
+4. Select self-host engine (`Nominatim` or `Photon`) and enter the base URL.
+5. Click **Compare Providers** to show multiple markers and compare outputs.
+
+### Provider endpoints used
+
+- Geoapify: `https://api.geoapify.com/v1/geocode/autocomplete` with VN bias/filter.
+- Goong: `https://rsapi.goong.io/geocode`.
+- OpenCage: `https://api.opencagedata.com/geocode/v1/json`.
+- LocationIQ: `https://us1.locationiq.com/v1/search`.
+- Self-host Nominatim: `{BASE_URL}/search?format=json&q=...&limit=1`.
+- Self-host Photon: `{BASE_URL}/api/?q=...&limit=1`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
